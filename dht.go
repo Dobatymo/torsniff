@@ -187,7 +187,7 @@ func (d *dht) run() {
 }
 
 func (d *dht) listen() {
-	buf := make([]byte, 2048)
+	buf := make([]byte, 65535)
 	for {
 		n, addr, err := d.conn.ReadFromUDP(buf)
 		if err == nil {
